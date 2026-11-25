@@ -1089,6 +1089,93 @@
       *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
       .floaty, .confetti { display: none; }
     }
+    /* =====================================================
+       RESPONSIVE CHO MÁY TÍNH & IPAD MÀN HÌNH LỚN (>= 860px)
+       ===================================================== */
+    @media (min-width: 860px) {
+      body {
+        padding-bottom: 40px;
+      }
+
+      /* Căn giữa nội dung Hero cho cân đối trên màn hình rộng */
+      .hero {
+        max-width: 1120px;
+        margin: 16px auto 0;
+        border-radius: 36px;
+        padding: 32px 36px 54px;
+      }
+
+      /* Đưa thanh điều hướng từ đáy lên thành thanh menu nổi phía trên */
+      .bottom-nav {
+        position: sticky;
+        top: 12px;
+        bottom: auto;
+        max-width: 680px;
+        margin: -24px auto 12px;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 8px 14px;
+      }
+
+      .nav-item {
+        flex-direction: row;
+        justify-content: center;
+        gap: 8px;
+        font-size: 13.5px;
+        padding: 6px 10px;
+      }
+
+      .nav-item .icon {
+        font-size: 18px;
+        padding: 5px 10px;
+      }
+
+      /* Mở rộng khung chính lên 1120px */
+      .container {
+        max-width: 1120px;
+        padding: 20px 24px;
+      }
+
+      /* Chia 2 cột cho Lịch trình & Danh sách thành viên */
+      #schedule-list,
+      #member-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        align-items: start;
+      }
+
+      #schedule-list .card,
+      #member-list .member-row-card {
+        margin-bottom: 0;
+      }
+
+      /* Chia 3 cột cho danh sách Quán ăn vặt & Đặc sản */
+      #food-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        align-items: stretch;
+      }
+
+      #food-list .card {
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      /* Chia 2 cột cho danh sách Chi riêng */
+      #private-expense-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        align-items: start;
+      }
+
+      #private-expense-list .card {
+        margin-bottom: 0;
+      }
+    }
   </style>
 </head>
 <body>
