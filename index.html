@@ -1094,10 +1094,10 @@
        ===================================================== */
     @media (min-width: 860px) {
       body {
-        padding-bottom: 40px;
+        padding-bottom: 48px;
       }
 
-      /* Căn giữa nội dung Hero cho cân đối trên màn hình rộng */
+      /* Hero gọn gàng, cân đối trên màn hình rộng */
       .hero {
         max-width: 1120px;
         margin: 16px auto 0;
@@ -1105,13 +1105,13 @@
         padding: 32px 36px 54px;
       }
 
-      /* Đưa thanh điều hướng từ đáy lên thành thanh menu nổi phía trên */
+      /* Đưa thanh điều hướng lên thành menu nổi phía trên */
       .bottom-nav {
         position: sticky;
         top: 12px;
         bottom: auto;
         max-width: 680px;
-        margin: -24px auto 12px;
+        margin: -24px auto 14px;
         grid-template-columns: repeat(4, 1fr);
         padding: 8px 14px;
       }
@@ -1129,32 +1129,46 @@
         padding: 5px 10px;
       }
 
-      /* Mở rộng khung chính lên 1120px */
+      /* Mở rộng khung chính */
       .container {
         max-width: 1120px;
         padding: 20px 24px;
       }
 
-      /* Chia 2 cột cho Lịch trình & Danh sách thành viên */
+      /* Chia 2 cột cho Lịch trình, Thành viên, Chi riêng (tăng khoảng cách cột để không cấn nút tròn) */
       #schedule-list,
-      #member-list {
+      #member-list,
+      #private-expense-list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        align-items: start;
+        gap: 18px 26px;
+        align-items: stretch;
+        margin-bottom: 20px;
       }
 
       #schedule-list .card,
-      #member-list .member-row-card {
+      #member-list .member-row-card,
+      #private-expense-list .card {
         margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
 
-      /* Chia 3 cột cho danh sách Quán ăn vặt & Đặc sản */
+      /* Nếu tổng số thẻ là số lẻ, thẻ cuối tự giãn ngang hết 2 cột cho cân đối */
+      #schedule-list > .card:last-child:nth-child(odd),
+      #member-list > .member-row-card:last-child:nth-child(odd),
+      #private-expense-list > .card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+      }
+
+      /* Chia 3 cột cho danh sách Ăn vặt & Đặc sản */
       #food-list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
+        gap: 18px 20px;
         align-items: stretch;
+        margin-bottom: 20px;
       }
 
       #food-list .card {
@@ -1162,18 +1176,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-      }
-
-      /* Chia 2 cột cho danh sách Chi riêng */
-      #private-expense-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        align-items: start;
-      }
-
-      #private-expense-list .card {
-        margin-bottom: 0;
       }
     }
   </style>
