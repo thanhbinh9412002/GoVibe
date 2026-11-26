@@ -1089,6 +1089,7 @@
       *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
       .floaty, .confetti { display: none; }
     }
+
     /* =====================================================
        RESPONSIVE CHO MÁY TÍNH & IPAD MÀN HÌNH LỚN (>= 860px)
        ===================================================== */
@@ -1207,7 +1208,7 @@
         <div class="stat-lbl">Thành viên</div>
       </div>
       <div class="stat-box">
-        <div class="stat-val" id="progressStat">0/15</div>
+        <div class="stat-val" id="progressStat">0/16</div>
         <div class="stat-lbl">Lịch trình</div>
       </div>
       <div class="stat-box">
@@ -1559,7 +1560,7 @@
         loc: "Vũng Tàu → Trạm xăng QL51 Phú Mỹ → Phà Cát Lái → TP.HCM",
         note: "⛽ Cửa hàng Xăng dầu Mỹ Xuân A (QL51) kèm tiệm tạp hóa sát bên để nghỉ chân trước khi qua Phà Cát Lái.",
         mapQuery: "Cửa hàng Xăng dầu Mỹ Xuân A Quốc lộ 51, Phường Mỹ Xuân, Phú Mỹ."
-      }
+      },
       {
         id: "d2-7", day: 2, done: false, highlight: true,
         time: "13h30 – 17h00",
@@ -2147,8 +2148,7 @@
       const member = state.members.find(m => m.id === id);
       if (!member) return;
       const raw = prompt(
-        `Nhập tổng số tiền (VNĐ) "${member.name}" đã đóng quỹ:
-(Nhập 0 nếu chưa đóng, ví dụ: 500000)`,
+        `Nhập tổng số tiền (VNĐ) "${member.name}" đã đóng quỹ:\n(Nhập 0 nếu chưa đóng, ví dụ: 500000)`,
         member.paidAmount || 0
       );
       if (raw === null) return;
